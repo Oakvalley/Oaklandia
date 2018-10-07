@@ -6,6 +6,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -84,11 +87,13 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+
 # Visual Studio profiler
 *.psess
 *.vsp
 *.vspx
 *.sap
+
 
 # TFS 2012 Local Workspace
 $tf/
