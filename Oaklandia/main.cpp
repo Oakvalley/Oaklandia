@@ -1,8 +1,13 @@
-#include <iostream>
+#include "Game.h"
 
 int main() {
-	std::cout << "Hello world." << std::endl;
-	std::cout << "Hej Viktoria." << std::endl;
-	std::cout << "Hej Anders" << std::endl;
+	Game game(1024, 768, "Oaklandia");
+	while (game.running()) {
+		game.handleEvents();
+		game.update();
+		game.draw();
+	}
+
+	game.cleanUp();
 	return 0;
 }
