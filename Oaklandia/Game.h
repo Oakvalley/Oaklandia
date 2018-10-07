@@ -1,6 +1,6 @@
 #pragma once
-//#include "IntroState.h"
-//#include "GameStateManager.h"
+#include "IntroState.h"
+#include "GameStateManager.h"
 #include <string>
 #include <SFML\Graphics.hpp>
 
@@ -21,10 +21,10 @@ public:
 private:
 	bool m_running;
 	int m_menuChoice;
-	//GameStateManager* m_gameStateManager;
-	//IntroState* m_introState;
+	GameStateManager* m_gameStateManager;
+	IntroState* m_introState;
 	sf::RenderWindow* m_window;
-	//TextureManager* m_textureManager;
-	//sf::Clock* m_clock;
-	//sf::Time m_elapsed;
+	TextureManager* m_textureManager;
+	sf::Clock* m_clock;
+	sf::Time m_elapsed;
 };
