@@ -1,10 +1,13 @@
 #include "GameStateManager.h"
 
-//Will push state back of vector, if in one state, will clean it up and remove it.
+
 
 GameStateManager::GameStateManager() {
 	m_textureManager = new TextureManager;
+	m_mouse = new Mouse;
 }
+
+//Will push state back of vector, if in one state, will clean it up and remove it.
 void GameStateManager::changeState(State* p_state) {
 	if (!m_gameStates.empty()) {
 		m_gameStates.back()->clean();
@@ -35,8 +38,8 @@ void GameStateManager::popState() {
 	m_gameStates.pop_back();
 }
 
-void GameStateManager::update(GameStateManager* p_state, float elapsedTime) {
-	m_gameStates.back()->update(this, elapsedTime);
+void GameStateManager::update(GameStateManager* p_state, sf::RenderWindow* p_window, float elapsedTime) {
+	m_gameStates.back()->update(this, p_window, elapsedTime);
 }
 
 void GameStateManager::initialize(GameStateManager* p_state) {

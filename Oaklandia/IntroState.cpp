@@ -26,7 +26,7 @@ void IntroState::initialize(GameStateManager* p_gameStateManager) {
 	m_sprite->setPosition(15.0f, 10.0f);
 }
 
-void IntroState::update(GameStateManager* p_state, float elapsedTime) {
+void IntroState::update(GameStateManager* p_state, sf::RenderWindow* p_window, float dt) {
 
 }
 

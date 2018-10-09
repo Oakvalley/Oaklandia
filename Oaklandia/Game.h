@@ -4,7 +4,6 @@
 #include <string>
 #include <SFML\Graphics.hpp>
 
-
 class Game
 {
 public:
@@ -26,5 +25,7 @@ private:
 	sf::RenderWindow* m_window;
 	TextureManager* m_textureManager;
 	sf::Clock* m_clock;
-	sf::Time m_elapsed;
+	sf::Time m_time;
+	float m_elapsed;
+	Mouse* m_mouse;
 };
