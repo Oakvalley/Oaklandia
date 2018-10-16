@@ -3,6 +3,8 @@
 #include "GameStateManager.h"
 #include <string>
 #include <SFML\Graphics.hpp>
+#include "InputManager.h"
+#include "AnimationManager.h"
 
 class Game
 {
@@ -27,5 +29,7 @@ private:
 	sf::Clock* m_clock;
 	sf::Time m_time;
 	float m_elapsed;
-	Mouse* m_mouse;
+	InputManager* m_inputManager;
+	AnimationManager* m_animationManager;
+	Animation* m_animation;
 };

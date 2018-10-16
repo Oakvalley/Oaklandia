@@ -4,7 +4,6 @@
 
 GameStateManager::GameStateManager() {
 	m_textureManager = new TextureManager;
-	m_mouse = new Mouse;
 }
 
 //Will push state back of vector, if in one state, will clean it up and remove it.
@@ -38,18 +37,17 @@ void GameStateManager::popState() {
 	m_gameStates.pop_back();
 }
 
-void GameStateManager::update(GameStateManager* p_state, sf::RenderWindow* p_window, float elapsedTime) {
-	m_gameStates.back()->update(this, p_window, elapsedTime);
+void GameStateManager::update(GameStateManager* p_state, sf::RenderWindow* p_window, InputManager* p_input, float elapsedTime) {
+	m_gameStates.back()->update(this, p_window, p_input, elapsedTime);
 }
 
 void GameStateManager::initialize(GameStateManager* p_state) {
 	m_gameStates.back()->initialize(this);
 }
 
-void GameStateManager::handleEvents(sf::RenderWindow* p_window, GameStateManager* p_gameStateManager) {
-	m_gameStates.back()->handleEvents(p_window, p_gameStateManager);
+void GameStateManager::handleEvents(sf::RenderWindow* p_window, GameStateManager* p_gameStateManager, InputManager* p_input) {
+	m_gameStates.back()->handleEvents(p_window, p_gameStateManager, p_input);
 }
 
 void GameStateManager::draw(sf::RenderWindow* p_window) {
-	m_textureManager->draw(p_window);
 }

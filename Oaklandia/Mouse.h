@@ -7,6 +7,10 @@ public:
 	Mouse();
 	~Mouse();
 
+	enum Button {
+		Left
+	};
+
 	bool isButtonpressed(int button);
 	sf::Vector2f getMousePosition(sf::RenderWindow* p_window) { return p_window->mapPixelToCoords(m_mouse->getPosition(*p_window)); }
 

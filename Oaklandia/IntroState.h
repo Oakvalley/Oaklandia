@@ -5,9 +5,9 @@ public:
 	IntroState();
 	~IntroState();
 
-	void update(GameStateManager*, sf::RenderWindow*, float dt);
+	void update(GameStateManager*, sf::RenderWindow*, InputManager*, float dt);
 	void initialize(GameStateManager*);
-	void handleEvents(sf::RenderWindow* p_window, GameStateManager*);
+	void handleEvents(sf::RenderWindow* p_window, GameStateManager*, InputManager*);
 	void draw(TextureManager*);
 	void clean();
 

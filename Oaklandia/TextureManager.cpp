@@ -1,35 +1,31 @@
 #include "TextureManager.h"
 #include <iostream>
 
-
-TextureManager::TextureManager()
-{
-	m_texture = new sf::Texture;
-	m_sprite = new sf::Sprite;
-}
-
-
-TextureManager::~TextureManager()
-{
-	delete m_texture;
-	delete m_sprite;
-}
-
-void TextureManager::load(sf::Texture* p_texture, sf::Sprite* p_sprite) {
-
-	p_sprite->setTexture(*p_texture);
-
-	add(p_sprite);
-}
-
-void TextureManager::draw(sf::RenderWindow* p_window) {
-	for (auto i : m_sprites) {
+/*	for (auto i : m_sprites) {
 		p_window->draw(*i);
 	}
+*/
+
+TextureManager::TextureManager(){
+	
+}
+
+
+TextureManager::~TextureManager(){
+}
+
+
+void TextureManager::load(sf::Texture* p_texture, const std::string& fileName, const sf::IntRect& textureSize) {
+	p_texture->loadFromFile(fileName, textureSize);
+	add(p_texture);
+}
+
+void TextureManager::add(sf::Texture* p_texture) {
+	m_textures.push_back(p_texture);
 }
 
 void TextureManager::clean() {
-	while (!m_sprites.empty()) {
-		m_sprites.pop_back();
+	while (!m_textures.empty()) {
+		m_textures.pop_back();
 	}
 }

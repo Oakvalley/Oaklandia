@@ -8,7 +8,10 @@ Game::Game(int width, int height, const std::string& title) : m_running(true), m
 	m_window = new sf::RenderWindow(sf::VideoMode(width, height), title);
 	m_gameStateManager->changeState(m_introState);
 	m_clock = new sf::Clock;
-	m_mouse = new Mouse;
+	m_inputManager = new InputManager;
+	m_animationManager = new AnimationManager;
+	//m_animation = new Animation;
+	initialize();
 }
 
 
@@ -17,17 +20,19 @@ Game::~Game()
 }
 
 void Game::handleEvents() {
-	m_gameStateManager->handleEvents(m_window, m_gameStateManager);
+	m_gameStateManager->handleEvents(m_window, m_gameStateManager, m_inputManager);
 }
 
 void Game::update() {
 	m_time = m_clock->restart();
 	m_elapsed = m_time.asSeconds();
-	m_gameStateManager->update(m_gameStateManager, m_window, m_elapsed);
+	//m_gameStateManager->update(m_gameStateManager, m_window, m_inputManager, m_elapsed);
 }
 
 void Game::initialize() {
-	m_gameStateManager->initialize(m_gameStateManager);
+	//m_animationManager->load(m_animationManager, 4);
+	//int p = m_animationManager->getNumberOfFrames();
+	//m_gameStateManager->initialize(m_gameStateManager);
 }
 
 void Game::draw() {

@@ -75,11 +75,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\git\Oaklandia\Libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\git\Oaklandia\Libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\git\Oaklandia\Libraries\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\git\Oaklandia\Libraries\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,23 +125,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationManager.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameStateManager.cpp" />
+    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="IntroState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="SpriteManager.cpp" />
     <ClCompile Include="TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationManager.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="InputManager.h" />
     <ClInclude Include="IntroState.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="PlayState.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteManager.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

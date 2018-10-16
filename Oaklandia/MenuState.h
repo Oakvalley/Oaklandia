@@ -1,7 +1,6 @@
 #pragma once
 #include "State.h"
 
-
 class MenuState : public State
 {
 public:
@@ -9,9 +8,9 @@ public:
 	~MenuState();
 
 	void initialize(GameStateManager*);
-	void update(GameStateManager*, sf::RenderWindow*, float);
+	void update(GameStateManager*, sf::RenderWindow*, InputManager*, float);
 	void clean();
-	void handleEvents(sf::RenderWindow*, GameStateManager*);
+	void handleEvents(sf::RenderWindow*, GameStateManager*, InputManager*);
 	void draw(TextureManager*);
 	void drawUI();
 
@@ -20,9 +19,7 @@ private:
 	int m_menuChoice;
 	sf::Texture* m_startButtonTexture;
 	sf::Sprite* m_startButton;
-	sf::Vector2i m_mousePosition;
-	Mouse* m_mouse;
 	bool m_hover;
-
+	Texture* m_startTexture;
 };
 
